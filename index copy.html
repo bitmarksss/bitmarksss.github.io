@@ -82,12 +82,12 @@
     $(document).ready(function (){
       let container = document.getElementById("container");
       document.getElementById('letter').addEventListener('click', function clickLetter() {
-        document.getElementById('letter').removeEventListener('click', clickLetter);
+
+      document.getElementById('letter').removeEventListener('click', clickLetter);
 
         setTimeout(() => {
           $('#container').prepend(`
-              <div id="love-card"
-                  class="absolute left-1/2 top-1/2 w-[300px] md:w-[500px] aspect-[1/1.4] bg-[#FFB6C1] rounded-lg shadow-lg md:py-16 md:px-12 flex flex-col gap-6 transition-transform duration-500 ease-in-out"
+              <div id="love-card" class="absolute left-1/2 top-1/2 w-[300px] md:w-[500px] aspect-[1/1.4] bg-[#FFB6C1] rounded-lg shadow-lg md:py-16 md:px-12 flex flex-col gap-6 transition-transform duration-500 ease-in-out"
                   style="opacity: 1; will-change: auto; transform: translateX(-50%) translateY(0); font-family: Poppins, sans-serif; clip-path: inset(0 0 80% 0);">
                   
                   <div class="space-y-4 p-4">
@@ -109,59 +109,24 @@
               </div>
           `);
 
-          let loveCard = document.getElementById('love-card')
-          loveCard.classList.add('-translate-y-1/2');
-          loveCard.style.left = '87px';
+          document.getElementById('love-card').classList.add('-translate-y-1/2');
+          document.getElementById('love-card').style.left = '87px';
 
           setTimeout(()=> {          
+            
             //document.getElementById('letter').classList.add('translate-y-12', 'opacity-0');
+            
             document.getElementById('letter').classList.add('slide-down');
             setTimeout(()=>{
-              loveCard.style.clipPath = 'inset(0 0 0 0)';
+              document.getElementById('love-card').style.clipPath = 'inset(0 0 0 0)';
             },100)
-
-            const yesBtn = document.getElementById("yes-btn");
-            const noBtn = document.getElementById("no-btn");
-
-            let yesSize = 1.0;
-            let noSize = 1.0;
-            let noOpacity = 1.0;
-
-            noBtn.addEventListener("click", function() {
-                // Increase YES button size
-                yesSize += 0.2;
-                yesBtn.style.transform = `scale(${yesSize})`;
-
-                // Decrease NO button size (but prevent it from disappearing completely)
-                noSize = Math.max(0.5, noSize - 0.1);
-                noBtn.style.transform = `scale(${noSize})`;
-
-                // Decrease NO button opacity
-                noOpacity = Math.max(0, noOpacity - 0.1);
-                noBtn.style.opacity = noOpacity;
-
-                // Hide the NO button completely when opacity reaches 0
-                if (noOpacity === 0) {
-                    setTimeout(() => {
-                        noBtn.style.display = "none";
-                    }, 200); // Give a slight delay for smooth transition
-                }
-            });
-
-            yesBtn.addEventListener("click", function (){
-              loveCard.innerHTML = '';
-              $('#love-card').prepend(`
-              <div class="flex flex-col items-center justify-center gap-8 p-8" style="opacity: 1; will-change: auto; transform: none;"><div class="bg-white p-4 rounded-lg shadow-lg w-fit" style="transform: rotate(-3deg);"><div class="md:w-64 md:h-64 w-32 h-32 mb-4"><img src="./heart.gif" alt="Celebrating bears" class="w-full h-full object-cover rounded"/></div></div><h1 class="text-[#E74C3C] text-4xl md:text-6xl font-extrabold text-left" style="line-height: 1.2;">LETSGOOOOO!</h1></div>
-              `);
-            });
-
           }, 1000);
         },500);
       });
 
+      const yesBtn = document.getElementById("yes-btn");
+      const noBtn = document.getElementById("no-btn");
       
-
-     /*
       noBtn.addEventListener("click", function() {
           // Increase YES button size
           yesSize += 0.2;
@@ -175,10 +140,52 @@
           noOpacity = Math.max(0.1, noOpacity - 0.1);
           noBtn.style.opacity = noOpacity;
       });
-     */
     });
   </script>
 
-  
+  <script async="" src="./Valentine&#39;s Card _ mewtru_files/gtm.js.download"></script>
+  <script>((STORAGE_KEY2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key2 = Math.random().toString(32).slice(2);
+      window.history.replaceState({
+        key: key2
+      }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(STORAGE_KEY2);
+    }
+  })("positions", null)
+</script>
+<link rel="modulepreload" href="https://mewtru.com/assets/manifest-b12eca89.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/entry.client-Cgzf1_Od.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/jsx-runtime-D8ipelNA.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/index-DW5Wj4fb.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/index-viHZjtiN.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/components-LZlsSOIh.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/clsx-B-dksMZM.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/proxy-KTLhuSMa.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/root-xCqfDV_G.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/index-BXMMkxXD.js">
+<link rel="modulepreload" href="https://mewtru.com/assets/valentine._index-qt7N48G3.js">
+<script>
+  window.__remixContext = {"url":"/valentine","basename":"/","future":{"v3_fetcherPersist":true,"v3_relativeSplatPath":true,"v3_throwAbortReason":true,"unstable_singleFetch":false,"unstable_lazyRouteDiscovery":false},"isSpaMode":false,"state":{"loaderData":{"root":null,"routes/valentine._index":null},"actionData":null,"errors":null}};
+</script>
+<script type="module" async="">
+  import "/assets/manifest-b12eca89.js";
+  import * as route0 from "/assets/root-xCqfDV_G.js";
+  import * as route1 from "/assets/valentine._index-qt7N48G3.js";
+
+  window.__remixRouteModules = {"root":route0,"routes/valentine._index":route1};
+
+  import("/assets/entry.client-Cgzf1_Od.js");
+</script>
+<script defer="" src="./Valentine&#39;s Card _ mewtru_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;90f3bb2fb9b16e63&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;0a4b7e4d323a442ca20a494eee76bd18&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
 </body>
 </html>
